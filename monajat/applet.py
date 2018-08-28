@@ -167,7 +167,8 @@ class ConfigDlg(Gtk.Dialog):
         # read cuurent city full name
         c = self.get_city('id', self.applet.conf['city_id'])
         if c:
-            c = c[0]
+            l = list(c) # convert filter Obj to list
+            c = l[0]
             self.user_city = c['name']
         else:
             c = {}
